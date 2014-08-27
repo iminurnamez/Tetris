@@ -16,11 +16,13 @@ clock = pygame.time.Clock()
 
 current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
 blocks = []
+block_group = Blockgroup()
 #num = 0
 
 while True:
     backround.fill(colours["RANDOM"])
     screen.blit(backround, (0, 0))
+    print block_group.rect
 
     for block in blocks:
         block.display(screen)

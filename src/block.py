@@ -22,10 +22,11 @@ class Blockgroup:
 
     def __init__(self):
         self.block_group = random.choice(
-            [   # I
+            [[   # I
                 Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 10), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-                Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])])
-#TEST
+                Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])]])
+        self.block_group_rects = [x.rect for x in self.block_group]
+        self.rect = self.block_group[0].rect.unionall(self.block_group_rects[1:])

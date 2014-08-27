@@ -19,13 +19,15 @@ class Block:
     def update(self):
         self.rect.centery += self.speed
 
-class Blockgroup_line:
+class Blockgroup:
 
     def __init__(self):
-        block_group.append([
-            Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-            Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 10), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-            Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-            Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-            Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
-        ])
+        block_group.append({
+            "LINE" : [
+                Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 10), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])],
+
+        })

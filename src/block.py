@@ -1,7 +1,6 @@
 __author__ = 'marclund'
 import pygame
 from constants import *
-block_group = []
 
 class Block:
 
@@ -22,12 +21,10 @@ class Block:
 class Blockgroup:
 
     def __init__(self):
-        block_group.append({
-            "LINE" : [
+        self.block_group = random.choice(
+            [   # I
                 Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 10), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-                Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])],
-
-        })
+                Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])])

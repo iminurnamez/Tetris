@@ -1,27 +1,12 @@
 __author__ = 'marclund'
 
-import sys
 import os
-import random
-
+import pygame
 from pygame.locals import *
+
+from constants import *
 from block import *
-
-
-WIDTH = 500
-HEIGHT = 500
-FPS = 60
-
-#Colours     R    G    B
-colours = {
-"BLACK" : (  0,   0,   0),
-"WHITE" : (255, 255, 255),
-"GREEN" : (  0, 255,   0),
-"RANDOM": (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))}
-
-def exit_game():
-    pygame.quit()
-    sys.exit()
+from functions import *
 
 pygame.init()
 os.environ["SDL_VIDEO_CENTERED"] = "True"

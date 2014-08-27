@@ -18,3 +18,7 @@ class Block:
     def update(self):
         self.rect.centery += self.speed
 
+class Blockgroup:
+
+    def __init__(self):
+        pass

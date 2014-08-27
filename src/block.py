@@ -1,6 +1,7 @@
 __author__ = 'marclund'
 import pygame
-
+from constants import *
+block_group = []
 
 class Block:
 
@@ -18,7 +19,13 @@ class Block:
     def update(self):
         self.rect.centery += self.speed
 
-class Blockgroup:
+class Blockgroup_line:
 
     def __init__(self):
-        pass
+        block_group.append([
+            Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+            Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 10), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+            Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+            Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+            Block(WIDTH / 40, (HEIGHT / 20) + (4 * (HEIGHT / 10)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+        ])

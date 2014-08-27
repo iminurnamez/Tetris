@@ -34,20 +34,36 @@ while True:
         if event.type == QUIT:
             exit_game()
         if event.type == KEYDOWN:
+
             if event.key == K_ESCAPE:
                 exit_game()
+
             if event.key == K_DOWN:
                 pass
+
             if event.key == K_RIGHT and current_block.rect.right < screen_rect.right:
                 clear = True
                 for block in blocks:
-                    pass
-                    #if block.rect.top
-                current_block.rect.left = current_block.rect.right
+                    if block.rect.top < current_block.rect.bottom and block.rect.bottom > current_block.rect.top and block.rect.left == current_block.rect.right:
+                        clear = False
+                        break
+
+                if clear:
+                    current_block.rect.left = current_block.rect.right
+
             if event.key == K_LEFT and current_block.rect.left > screen_rect.left:
-                current_block.rect.right = current_block.rect.left
+                clear = True
+                for block in blocks:
+                    if block.rect.top < current_block.rect.bottom and block.rect.bottom > current_block.rect.top and block.rect.right == current_block.rect.left:
+                        clear = False
+                        break
+
+                if clear:
+                    current_block.rect.right = current_block.rect.left
+
             if event.key == K_UP:
                 pass
+
             if event.key == K_SPACE:
                 current_block.speed += 10
 

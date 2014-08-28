@@ -11,6 +11,7 @@ class Block:
         self.block1 = pygame.draw.rect(self.surface, (0, 0, 0), (0, 0, width, height))
         self.block = pygame.draw.rect(self.surface, colour, (width - (width * 0.95), height - (height * 0.95), width * 0.95, height * 0.95))
         self.speed = 1
+        self.bottom = False
 
     def display(self, surface):
         surface.blit(self.surface, self.rect)

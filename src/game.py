@@ -16,7 +16,7 @@ clock = pygame.time.Clock()
 
 current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
 blocks = []
-#num = 0
+num_of_blocks = WIDTH / (WIDTH / 20)
 
 while True:
     backround.fill(colours["RANDOM"])
@@ -24,6 +24,8 @@ while True:
 
     for block in blocks:
         block.display(screen)
+        if block.rect.bottom == screen_rect.bottom:
+            block.bottom = True
 
     current_block.display(screen)
 

@@ -78,7 +78,7 @@ while True:
             current_block.speed = 0
             current_block.rect.bottom = screen_rect.bottom
             blocks.append(current_block)
-            current_block = Blockgroup()
+            current_block = Blockgroup().block_group
 
     for block in blocks:
         for current_block in current_blocks:
@@ -86,7 +86,7 @@ while True:
                 current_block.speed = 0
                 current_block.rect.bottom = block.rect.top
                 blocks.append(current_block)
-                current_block = Blockgroup()
+                current_block = Blockgroup().block_group
 
 
 

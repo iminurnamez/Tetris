@@ -26,6 +26,43 @@ class Blockgroup:
                 Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
                 Block(WIDTH / 40, (HEIGHT / 20) + (2 * (HEIGHT / 20)), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
-                Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 20)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])]])
+                Block(WIDTH / 40, (HEIGHT / 20) + (3 * (HEIGHT / 20)), WIDTH / 20, HEIGHT / 20, colours["GREEN"])],
+                [ # Fyrkant
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20)*1, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*1, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ],
+                [ # L
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ],
+                [ # S
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ],
+                [ # Z
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ],
+                [ # J
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20), WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ],
+                [ # konstig
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*1, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*1, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*2, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"]),
+                Block((WIDTH / 40)+(WIDTH / 20)*0, (HEIGHT / 20)*2, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+                ]
+            ])
         #self.block_group_rects = [x.rect for x in self.block_group]
         #self.rect = self.block_group[0].rect.unionall(self.block_group_rects[1:])

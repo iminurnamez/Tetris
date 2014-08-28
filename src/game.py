@@ -16,7 +16,6 @@ clock = pygame.time.Clock()
 
 current_blocks = Blockgroup().block_group
 blocks = []
-block_group = Blockgroup()
 
 while True:
     backround.fill(colours["RANDOM"])

@@ -14,26 +14,9 @@ screen_rect = screen.get_rect()
 backround = pygame.Surface(screen.get_size())
 clock = pygame.time.Clock()
 
-#current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
 current_blocks = Blockgroup().block_group
 blocks = []
 block_group = Blockgroup()
-#num = 0
-
-def check_right_collision(list_of_rects, rect):
-    for current_block in current_blocks:
-        if current_block.rect.right < screen_rect.right:
-            return True
-        else:
-            return False
-
-def check_left_collision(list_of_rects, rect):
-    for current_block in current_blocks:
-        if current_block.rect.left > screen_rect.left:
-            return True
-        else:
-            return False
-
 
 while True:
     backround.fill(colours["RANDOM"])
@@ -96,16 +79,15 @@ while True:
             current_block.rect.bottom = screen_rect.bottom
             blocks.append(current_block)
             current_block = Blockgroup()
-            #blocks.append(Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]))
-            #num += 1
-        for block in blocks:
+
+    for block in blocks:
+        for current_block in current_blocks:
             if current_block.rect.bottom >= block.rect.top and current_block.rect.centerx == block.rect.centerx:
                 current_block.speed = 0
                 current_block.rect.bottom = block.rect.top
                 blocks.append(current_block)
                 current_block = Blockgroup()
-                #blocks.append(Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]))
-                #num += 1
+
 
 
 

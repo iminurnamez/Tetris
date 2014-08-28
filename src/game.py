@@ -14,20 +14,36 @@ screen_rect = screen.get_rect()
 backround = pygame.Surface(screen.get_size())
 clock = pygame.time.Clock()
 
-current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+#current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+current_blocks = Blockgroup().block_group
 blocks = []
 block_group = Blockgroup()
 #num = 0
 
+def check_right_collision(list_of_rects, rect):
+    for current_block in current_blocks:
+        if current_block.rect.right < screen_rect.right:
+            return True
+        else:
+            return False
+
+def check_left_collision(list_of_rects, rect):
+    for current_block in current_blocks:
+        if current_block.rect.left > screen_rect.left:
+            return True
+        else:
+            return False
+
+
 while True:
     backround.fill(colours["RANDOM"])
     screen.blit(backround, (0, 0))
-    print block_group.rect
-
+    print len(current_blocks)
     for block in blocks:
         block.display(screen)
 
-    current_block.display(screen)
+    for current_block in current_blocks:
+        current_block.display(screen)
 
     clock.tick(FPS)
 
@@ -42,7 +58,7 @@ while True:
             if event.key == K_DOWN:
                 pass
 
-            if event.key == K_RIGHT and current_block.rect.right < screen_rect.right:
+            if event.key == K_RIGHT and check_right_collision(current_blocks, screen_rect):
                 clear = True
                 for block in blocks:
                     if block.rect.top < current_block.rect.bottom and block.rect.bottom > current_block.rect.top and block.rect.left == current_block.rect.right:
@@ -52,7 +68,7 @@ while True:
                 if clear:
                     current_block.rect.left = current_block.rect.right
 
-            if event.key == K_LEFT and current_block.rect.left > screen_rect.left:
+            if event.key == K_LEFT and check_left_collision(current_blocks, screen_rect):
                 clear = True
                 for block in blocks:
                     if block.rect.top < current_block.rect.bottom and block.rect.bottom > current_block.rect.top and block.rect.right == current_block.rect.left:
@@ -60,33 +76,36 @@ while True:
                         break
 
                 if clear:
-                    current_block.rect.right = current_block.rect.left
+                    for current_block in current_blocks:
+                        current_block.rect.right = current_block.rect.left
 
             if event.key == K_UP:
                 pass
 
             if event.key == K_SPACE:
-                current_block.speed += 10
+                for current_block in current_blocks:
+                    current_block.speed += 10
 
     pygame.display.set_caption("FPS: %d" % clock.get_fps())
     pygame.display.update()
-    current_block.update()
+    for current_block in current_blocks:
+        current_block.update()
 
-    if current_block.rect.bottom >= screen_rect.bottom:
-        current_block.speed = 0
-        current_block.rect.bottom = screen_rect.bottom
-        blocks.append(current_block)
-        current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
-        #blocks.append(Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]))
-        #num += 1
-    for block in blocks:
-        if current_block.rect.bottom >= block.rect.top and current_block.rect.centerx == block.rect.centerx:
+        if current_block.rect.bottom >= screen_rect.bottom:
             current_block.speed = 0
-            current_block.rect.bottom = block.rect.top
+            current_block.rect.bottom = screen_rect.bottom
             blocks.append(current_block)
-            current_block = Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"])
+            current_block = Blockgroup()
             #blocks.append(Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]))
             #num += 1
+        for block in blocks:
+            if current_block.rect.bottom >= block.rect.top and current_block.rect.centerx == block.rect.centerx:
+                current_block.speed = 0
+                current_block.rect.bottom = block.rect.top
+                blocks.append(current_block)
+                current_block = Blockgroup()
+                #blocks.append(Block(WIDTH / 40, HEIGHT / 20, WIDTH / 20, HEIGHT / 20, colours["GREEN"]))
+                #num += 1
 
 
 

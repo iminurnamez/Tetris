@@ -4,6 +4,7 @@ import random
 WIDTH = 500
 HEIGHT = 500
 FPS = 60
+CELL_SIZE = WIDTH // 20
 
 #Colours     R    G    B
 colours = {

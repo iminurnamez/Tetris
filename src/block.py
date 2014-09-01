@@ -186,17 +186,17 @@ class IBlock(BlockGroup):
         
 class LBlock(BlockGroup):
     charmap = {"up": ["BXX",
-                                "BXX",
-                                "BBX"], 
-                      "down": ["XBB",
-                                    "XXB",
-                                    "XXB"],
+                             "BXX",
+                             "BBX"], 
+                   "down": ["XBB",
+                              "XXB",
+                              "XXB"],
                       "left": ["XXX",
-                                 "XXB",
-                                 "BBB"],
-                      "right": ["BBB",
-                                   "BXX",
-                                   "XXX"]}
+                              "XXB",
+                              "BBB"],
+                    "right": ["BBB",
+                              "BXX",
+                              "XXX"]}
     
     def __init__(self, index, color, direction):
         super(LBlock, self).__init__(index, color)    
